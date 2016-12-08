@@ -1,0 +1,55 @@
+\input{styles/import}
+
+\begin{document}
+
+\title{EPSI B3 - Programmation linéaire\\Chapitre 2 : Application à la 3D}
+
+\author{Nicolas Mauger}
+
+\date{7 décembre 2016}
+
+\maketitle
+
+\section{Optimisation 3D}
+On cherche maintenant à maximiser ou minimliser une fonction $Z$, qu'on écrira
+$\max(Z(x,y,z))$ tel que $Z(x,y,z) = ax + by + cz$. Pour faciliter l'application
+ à l'algorithmique, on écrira les variables àl'aide d'indice. \\
+
+On obtient donc le système d'équation à $m$ contraintes suivant :
+
+\begin{equation*}
+  s.c
+     \begin{cases}
+        a_{11}X_{1} + a_{12}X_{2} + a_{13}X_{3} \leq b_{1} \\
+        a_{21}X_{1} + a_{22}X_{2} + a_{23}X_{3} \leq b_{2} \\
+        \vdots                           \\
+        a_{m1}X_{1} + a_{m2}X_{2} + a_{m3}X_{3} \leq b_{m} \\
+        X_{1} \geq 0, X_{2} \geq 0, X_{3} \geq 0
+     \end{cases}
+\end{equation*}
+
+\subsection{Exemple de résolution}
+Soit la fonction à maximiser
+$$ Z(X_{1},X_{2},X_{3}) = 10X_{1} + 13X_{2} + 12X_{3} $$
+
+On définit les contraintes suivantes :
+
+\begin{equation*}
+  s.c
+     \begin{cases}
+        X_{1} + 2X_{2} + 3X_{3} \leq 120 \\
+        3X_{1} + X_{2} + 2X_{3} \leq 120 \\
+        X_{1} + 4X_{2} + X_{3} \leq 120 \\
+        X_{1} \geq 0, X_{2} \geq 0, X_{3} \geq 0
+     \end{cases}
+\end{equation*}
+
+Ce qui nous donne trois équations cartésienne de plan:
+\begin{itemize}
+  \item $P_{1} \rightarrow X_{1} + 2X_{2} + 3X_{3} = 120 $
+  \item $P_{2} \rightarrow 3X_{1} + X_{2} + 2X_{3} = 120 $
+  \item $P_{3} \rightarrow X_{1} + 4X_{2} + X_{3} = 120 $
+\end{itemize}
+
+
+\end{document}
