@@ -1,0 +1,123 @@
+\input{styles/import}
+
+\begin{document}
+
+\title{EPSI B3 - Programmation linéaire\\Chapitre 1 : Recherche de forme duale}
+
+\author{Nicolas Mauger}
+
+\date{22 octobre 2016}
+
+\maketitle
+
+\section{Maximisation de la fonction $Z$}
+On cherche à maximiser ou minimliser une fonction $Z$, qu'on écrira
+$\max(Z(x,y))$ tel que $$Z(x,y) = ax + by$$
+
+On obtient donc le système d'équation à $m$ contraintes suivant :
+
+\begin{equation*}
+  s.c
+     \begin{cases}
+        a_{11}x_{1} + a_{12}y \leq b_{1} \\
+        a_{21}x_{1} + a_{22}y \leq b_{2} \\
+        \vdots                           \\
+        a_{m1}x_{1} + a_{m2}y \leq b_{m}
+     \end{cases}
+\end{equation*}
+
+\subsection{Résolution}
+La résolution se problème se fait en 3 étapes.
+\begin{enumerate}
+  \item Localiser $Z$ dans la zone de programme admissible;
+  \item Tracer la droite $ \Delta : Z = 0 $ avec $ax+by=0$
+  \item On fait glisser la droite $\Delta$ dans la zone de programme admissible
+  et on cherche le point le plus lointain de l'origine dans la zone de programme
+  admissible qui rencontre une parallèle à $\Delta$. On note ce point
+  $H(x_{0},y_{0})$.
+\end{enumerate}
+
+\paragraph{Remarque}
+On peut tomber sur des containtes incompatibles, tels qu $Opt(Z)$ n'existe pas. \\
+On peut aussi trouver une zone admissible infinie; dans ce cas on dit que la
+zone de programme admissible est une zone non bornée, et que $\max(Z)=+\infty$.
+
+\begin{theor}
+L'image par une fonction continu d'une zone fermée bornée est une zone fermée
+bornée.
+\end{theor}
+
+\begin{theor}
+L'optimum d'une fonction continu définit sur un compact (c.à.d une zone fermée
+bornée) se trouve sur la frontière de cette zone.
+\end{theor}
+
+\begin{theor}
+Si un optimum d'une fonction économique $Z$ est le même en deux sommets $A$ et
+$B$, alors l'optimum est constant sur tout le segment $[A,B]$
+\end{theor}
+
+\subsection{Intérprétation graphique}
+Calulons $\min(Z(x,y))=?$ sous les contraintes suivantes:
+\begin{equation*}
+  s.c
+    \begin{cases}
+      3x + 2y \geq 6 \\
+      2x - 3y \leq 0 \\
+      x + y \leq 8 \\
+      0 \leq y \leq 4 \\
+      x \geq 1
+    \end{cases}
+\end{equation*}
+
+\definecolor{ccwwff}{rgb}{0.8,0.4,1.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqttcc}{rgb}{0.,0.2,0.8}
+\definecolor{ttzzqq}{rgb}{0.2,0.6,0.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-5.586350201989329,0.) -- (8.863832371063486,0.);
+\foreach \x in {-4.,-2.,2.,4.,6.,8.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-3.8921283811623044) -- (0.,6.950813314623452);
+\foreach \y in {-2.,2.,4.,6.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-5.586350201989329,-3.8921283811623044) rectangle (8.863832371063486,6.950813314623452);
+\fill[color=ccwwff,fill=ccwwff,pattern=dots,pattern color=ccwwff] (1.,4.) -- (1.,1.5) -- (1.3846153846153846,0.9230769230769231) -- (4.8,3.2) -- (4.,4.) -- cycle;
+\draw [line width=1.2pt,color=ffqqqq,domain=-5.586350201989329:8.863832371063486] plot(\x,{(--6.-3.*\x)/2.});
+\draw [line width=1.2pt,color=ttzzqq,domain=-5.586350201989329:8.863832371063486] plot(\x,{(-0.-2.*\x)/-3.});
+\draw [line width=1.2pt,color=qqttcc,domain=-5.586350201989329:8.863832371063486] plot(\x,{(--8.-1.*\x)/1.});
+\draw [dash pattern=on 5pt off 5pt,domain=-5.586350201989329:8.863832371063486] plot(\x,{(--4.-0.*\x)/1.});
+\draw [dash pattern=on 5pt off 5pt] (1.,-3.8921283811623044) -- (1.,6.950813314623452);
+\draw [color=ccwwff] (1.,4.)-- (1.,1.5);
+\draw [color=ccwwff] (1.,1.5)-- (1.3846153846153846,0.9230769230769231);
+\draw [color=ccwwff] (1.3846153846153846,0.9230769230769231)-- (4.8,3.2);
+\draw [color=ccwwff] (4.8,3.2)-- (4.,4.);
+\draw [color=ccwwff] (4.,4.)-- (1.,4.);
+\draw (5.362686813715888,3.5345440132115016) node[anchor=north west] {$VE \, = \,10.4$};
+\draw (2.2222653440950113,0.9245991431887067) node[anchor=north west] {$VD \, = \,3$};
+\draw (-1.3000992772365116,1.8157998305135634) node[anchor=north west] {$VC \, = \,3$};
+\draw (1.2037502728666192,5.062316620054113) node[anchor=north west] {$VB \, = \,5.5$};
+\draw (4.110762038664322,5.062316620054113) node[anchor=north west] {$VA \, = \,10$};
+\begin{scriptsize}
+\draw[color=ffqqqq] (-1.6396043009793089,6.802279866735976) node {$3x + 2y = 6$};
+\draw[color=ttzzqq] (-4.780025770600185,-3.234337397660625) node {$2x - 3y = 0$};
+\draw[color=qqttcc] (2.010074704255763,6.802279866735976) node {$x + y = 8$};
+\draw[color=black] (-5.161968922310832,3.8316109089864536) node {$y = 4$};
+\draw[color=black] (1.479598104657642,6.802279866735976) node {$x = 1$};
+\draw [fill=uuuuuu] (4.,4.) circle (1.5pt);
+\draw[color=uuuuuu] (4.153200166632171,4.298430316632807) node {$A$};
+\draw [fill=uuuuuu] (1.,4.) circle (1.5pt);
+\draw[color=uuuuuu] (1.1400930809148446,4.298430316632807) node {$B$};
+\draw [fill=uuuuuu] (1.,1.5) circle (1.5pt);
+\draw[color=uuuuuu] (1.1400930809148446,1.7945807665296383) node {$C$};
+\draw [fill=uuuuuu] (1.3846153846153846,0.9230769230769231) circle (1.5pt);
+\draw[color=uuuuuu] (1.5432552966094166,1.2216660389636589) node {$D$};
+\draw [fill=uuuuuu] (4.8,3.2) circle (1.5pt);
+\draw[color=uuuuuu] (4.938305534037391,3.492105885243651) node {$E$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+\end{document}
