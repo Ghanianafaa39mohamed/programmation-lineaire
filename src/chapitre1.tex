@@ -1,4 +1,4 @@
-\input{styles/import}
+\input{include/import}
 
 \begin{document}
 
@@ -38,9 +38,9 @@ La résolution se problème se fait en 3 étapes.
 \end{enumerate}
 
 \paragraph{Remarque}
-On peut tomber sur des containtes incompatibles, tels qu $Opt(Z)$ n'existe pas. \\
+On peut tomber sur des contraintes incompatibles, tels que $Opt(Z)$ n'existe pas. \\
 On peut aussi trouver une zone admissible infinie; dans ce cas on dit que la
-zone de programme admissible est une zone non bornée, et que $\max(Z)=+\infty$.
+zone de programme admissible est une zone non bornée, et que $\max(Z)=+\infty$. \\
 
 \begin{theor}
 L'image par une fonction continu d'une zone fermée bornée est une zone fermée
@@ -58,7 +58,7 @@ $B$, alors l'optimum est constant sur tout le segment $[A,B]$
 \end{theor}
 
 \subsection{Intérprétation graphique}
-Calulons $\min(Z(x,y))=?$ sous les contraintes suivantes:
+Calulons $\min(Z(x,y))$ avec $Z(x,y) = \frac{3}{2}x + y$ sous les contraintes suivantes:
 \begin{equation*}
   s.c
     \begin{cases}
@@ -118,6 +118,25 @@ Calulons $\min(Z(x,y))=?$ sous les contraintes suivantes:
 \draw[color=uuuuuu] (4.938305534037391,3.492105885243651) node {$E$};
 \end{scriptsize}
 \end{tikzpicture}
+
+On peut alors construire un tableau ou l'on calcule la valeur de chacun des sommets de la zone de programme admissible $[ABCDE]$ avec la fonction économique $Z$:
+
+\begin{center}
+   \begin{tabular}{ c | c  }
+     Sommets & Valeurs \\ \hline
+     $A(4;4)$ & $Z_{A} = 10$ \\
+     $B(1;4)$ & $Z_{B} = 5,5$ \\
+     $C(1;1,5)$ & $Z_{C} = 3$ \\
+     $D(\frac{69}{50};\frac{23}{25})$ & $Z_{D} = 3$ \\
+     $E(\frac{24}{5};\frac{16}{5})$ & $Z_{D} = 10,4$ \\
+   \end{tabular}
+ \end{center}
+
+ On constate alors qu'il y a deux valeurs minimales: le sommet $C$ et le sommet $D$.
+ Or selon le théorème numéro 3, si un optimum d'une fonction économique $Z$ est le même
+ en deux sommets $A$ et $B$, alors l'optimum est constant sur tout le segment
+ $[A,B]$. Donc la solution de la fonction économique $Z$ est l'ensemble
+ des points sur le segment $[C,D]$.
 
 
 \end{document}

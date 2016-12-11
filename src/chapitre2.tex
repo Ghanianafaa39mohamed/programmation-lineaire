@@ -1,4 +1,4 @@
-\input{styles/import}
+\input{include/import}
 
 \begin{document}
 
@@ -13,7 +13,7 @@
 \section{Optimisation 3D}
 On cherche maintenant à maximiser ou minimliser une fonction $Z$, qu'on écrira
 $\max(Z(x,y,z))$ tel que $Z(x,y,z) = ax + by + cz$. Pour faciliter l'application
- à l'algorithmique, on écrira les variables àl'aide d'indice. \\
+ à l'algorithmique, on écrira les variables à l'aide d'indice. \\
 
 On obtient donc le système d'équation à $m$ contraintes suivant :
 
@@ -24,7 +24,6 @@ On obtient donc le système d'équation à $m$ contraintes suivant :
         a_{21}X_{1} + a_{22}X_{2} + a_{23}X_{3} \leq b_{2} \\
         \vdots                           \\
         a_{m1}X_{1} + a_{m2}X_{2} + a_{m3}X_{3} \leq b_{m} \\
-        X_{1} \geq 0, X_{2} \geq 0, X_{3} \geq 0
      \end{cases}
 \end{equation*}
 
@@ -40,16 +39,41 @@ On définit les contraintes suivantes :
         X_{1} + 2X_{2} + 3X_{3} \leq 120 \\
         3X_{1} + X_{2} + 2X_{3} \leq 120 \\
         X_{1} + 4X_{2} + X_{3} \leq 120 \\
-        X_{1} \geq 0, X_{2} \geq 0, X_{3} \geq 0
+        X_{1}, X_{2}, X_{3} \geq 0 \\
      \end{cases}
 \end{equation*}
 
 Ce qui nous donne trois équations cartésienne de plan:
-\begin{itemize}
-  \item $P_{1} \rightarrow X_{1} + 2X_{2} + 3X_{3} = 120 $
-  \item $P_{2} \rightarrow 3X_{1} + X_{2} + 2X_{3} = 120 $
-  \item $P_{3} \rightarrow X_{1} + 4X_{2} + X_{3} = 120 $
-\end{itemize}
+$$ P_{1} \rightarrow X_{1} + 2X_{2} + 3X_{3} = 120 $$
+$$ P_{2} \rightarrow 3X_{1} + X_{2} + 2X_{3} = 120 $$
+$$ P_{3} \rightarrow X_{1} + 4X_{2} + X_{3} = 120 $$
+
+\newpage
+
+On trace alors les différents plans $P_{n}$ tels que :
+$$ A_{n} \in P_{n}  \cap O\overrightarrow{X_{1}} $$
+$$ B_{n} \in P_{n}  \cap O\overrightarrow{X_{2}} $$
+$$ C_{n} \in P_{n}  \cap O\overrightarrow{X_{3}} $$
+
+% Geogebra currently do not support 3D export
+
+La zone de programme admissible sera l'ensemble des points dans le pavé $[ABCDEFG]$.
+Comme pour la forme duale, on peut calculer la valeur de chacun de ces sommets avec la fonction économique:
+\begin{center}
+   \begin{tabular}{ c | c  }
+     Sommet & Valeur \\ \hline
+     $O(0,0,0)$ & $Z_{O} = 0$ \\
+     $A(40,0,0)$ & $Z_{A} = 400$ \\
+     $C(0,30,0)$ & $Z_{C} = 390$ \\
+     $E(0,0,40)$ & $Z_{E} = 480$ \\
+     $B(\frac{360}{11},\frac{260}{11},0)$ & $Z_{B} = 610,9$ \\
+     $F(\frac{120}{7},0,\frac{240}{7})$ & $Z_{F} = 382,86$ \\
+     $D(0,24,24)$ & $Z_{D} = 600$ \\
+     $G(20,20,20)$ & $Z_{G} = 700$ \\
+   \end{tabular}
+ \end{center}
+
+On constate alors que c'est au point $G$ qu'on obtient l'optimum de $Z$, le point $G$ est donc solution de la fonction économique $Z$.
 
 
 \end{document}

@@ -3,9 +3,10 @@
 Ce dépôt regroupe mes prises de notes du cours de programmation linéaire de troisième année à l'EPSI.
 
 ## Les cours
-Vous pouvez télécharger chapitres directement au format PDF avec les liens ci-dessous :
-- Chapitre 1: [Résolution de forme duale](https://www.dropbox.com/s/b0eqmhm5an5rnmk/programmationlineaire_chapitre1.pdf?dl=0)
-- Chapitre 2: Optimisation 3D (à venir)
+Vous pouvez télécharger les chapitres directement au format PDF avec les liens ci-dessous :
+- Chapitre 1: [Résolution de forme duale](https://www.dropbox.com/s/k53auj0302zgkdp/programmation_lin%C3%A9aire_chapitre1.pdf?dl=0)
+- Chapitre 2: [Optimisation 3D](https://www.dropbox.com/s/26q8r1pzd4gxjed/programmation_lin%C3%A9aire_chapitre2.pdf?dl=0)
+- Chapitre 3: Application algorithmique (à venir)
 
 ## Contribuer
 Toutes contributions , suggestions, issues, pull requests sont les bienvenues.
