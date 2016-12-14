@@ -6,7 +6,7 @@
 CLEAN_LOG=*~ *.rtf *.ps *.log *.aux *.out *.css *.bak *.toc *.pl *.4ct *.4tc *.lg *.sxw *.tmp *.xref *.idv *.tns *.nav *.snm
 CLEAN_OUTPUT=*.pdf *.dvi *.html
 # Use ":=" when the variable's definition need to resolve others variables
-TEXFILES := $(wildcard main.tex)
+TEXFILES := $(wildcard *.tex)
 # To not compile the includes files !
 TEXFILES := $(filter-out *.tex, $(TEXFILES))
 SVGFILES = $(wildcard includes/*.svg)
