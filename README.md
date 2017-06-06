@@ -11,7 +11,8 @@ Vous pouvez télécharger les chapitres directement au format PDF avec les liens
 ## L'implémentation
 Je joins à mes cours des exemples d'implémentation algorithmique en :
 - [Python](https://github.com/maugern/programmation-lineaire/blob/master/res/exemple-pulp.py)
-- Langage C (à venir)
+- [C](https://github.com/maugern/programmation-lineaire/blob/master/res/Simplex.c)
+- Go (A venir)
 
 ## Contribuer
 Toutes contributions , suggestions, issues, pull requests sont les bienvenues.
