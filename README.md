@@ -10,14 +10,20 @@ Vous pouvez télécharger les chapitres directement au format PDF avec les liens
 
 ## L'implémentation
 Je joins à mes cours des exemples d'implémentation algorithmique en :
-- [Python](https://github.com/maugern/programmation-lineaire/blob/master/res/exemple-pulp.py)
 - [C](https://github.com/maugern/programmation-lineaire/blob/master/res/Simplex.c)
-- Go (A venir)
+- [Python](https://github.com/maugern/programmation-lineaire/blob/master/res/exemple-pulp.py) avec la bibliothèque de programmation linéaire [Pulp](https://www.coin-or.org/PuLP/index.html)
+- Go (à venir)
 
 ## Contribuer
-Toutes contributions , suggestions, issues, pull requests sont les bienvenues.
+Toutes contributions, suggestions, issues, pull requests sont les bienvenues.
 
 ## Ressources
 - Template original en LaTeX de [Karol Kozioł](http://www.karol-koziol.net/)
 - Illustrations réalisées avec [geogebra](https://www.geogebra.org)
-- La bibliothèque de programmation linéaire [Pulp](https://www.coin-or.org/PuLP/index.html)
+
+## Licence
+Ce projet est distribué sous licence libre "DO WHAT THE FUCK YOU WANT PUBLIC LICENSE".
+Pour plus d'informations, visitez [le site officiel](http://www.wtfpl.net/).
+
+Do what the fuck you want.
+Enjoy your free software !
